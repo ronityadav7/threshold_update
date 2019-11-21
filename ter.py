@@ -14,7 +14,7 @@ LOG_FORMAT = '%(asctime)s.%(msecs).06dZ - %(process)d - %(name)s - %(levelname)s
 LOG_FILE_NAME = 'svn_changes-{dt}.log'.format(dt = datetime.now().strftime("%d-%m-%Y"))
 IBC = {
     #'SVN_URL': 'http://10.171.22.33/svn/ibc/sites/',
-    # 'SVN_URL': 'http://161.85.111.157/svn/ibc/sites/',
+    'SVN_URL': 'http://161.85.111.157/svn/ibc/sites/',
     'SVN_USERNAME': 'operator',
     'SVN_PASSWORD': 'st3nt0r',
 }
