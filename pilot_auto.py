@@ -74,11 +74,10 @@ class LhostYmlFileChangerForMultipleSites():
                         lhost_yml_dict['threshold_values'][self.keyName2] = self.new_value_for_keyname2
                         lhost_yml_dict['threshold_values'][self.keyName3] = self.new_value_for_keyname3
                     else:
-                        d={self.keyName1:new_value_for_keyname1,self.keyName2:new_value_for_keyname2,self.keyName3:new_value_for_keyname3}
+                        d={self.keyName1:self.new_value_for_keyname1,self.keyName2:self.new_value_for_keyname2,self.keyName3:self.new_value_for_keyname3}
                         lhost_yml_dict.update(d)
                 else:
-                    p1={t:{self.keyName1:new_value_for_keyname1,self.keyName2:new_value_for_keyname2,self.keyName3:new_value_for_keyname3}}
-                    lhost_yml_dict.update(p1)
+                    p1={t:{self.keyName1:self.new_value_for_keyname1,self.keyName2:self.new_value_for_keyname2,self.keyName3:self.new_value_for_keyname3}}                 lhost_yml_dict.update(p1)
 
 
 
