@@ -70,7 +70,7 @@ class LhostYmlFileChangerForMultipleSites():
                 lhost_yml_dict['shinken_resources'][self.keyName1] = self.encrypt(new_value_for_keyname1)
                 lhost_yml_dict['shinken_resources'][self.keyName2] = self.encrypt(site.upper() + new_value_for_keyname2)
                 p1={t:{'WAITING_WARNING':3,'WAITING_CRITICAL':1}}
-                lhost_yml_dict['threshold_values'].update(p1)
+                lhost_yml_dict.update(p1)
 
 
             self.process_config_file('/lhost.yml', yaml.safe_dump(lhost_yml_dict, default_flow_style=False))
