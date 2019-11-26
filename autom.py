@@ -68,20 +68,17 @@ class LhostYmlFileChangerForMultipleSites():
                 lhost_yml_dict = yaml.load(scanner_conts)
                 t='threshold_values'
                 n='nem'
-                a=self.new_value_for_keyname1
-                b=self.new_value_for_keyname2
-                c=self.new_value_for_keyname3
                 if t in lhost_yml_dict:
                     lhost_yml_dict['threshold_values'] = lhost_yml_dict.get('threshold_values', {})
                     if self.keyName1 in lhost_yml_dict['threshold_values']:
-                        lhost_yml_dict['threshold_values'][self.keyName1] = a
-                        lhost_yml_dict['threshold_values'][self.keyName2] = b
-                        lhost_yml_dict['threshold_values'][self.keyName3] = c
+                        lhost_yml_dict['threshold_values'][self.keyName1] = new_value_for_keyname1
+                        lhost_yml_dict['threshold_values'][self.keyName2] = new_value_for_keyname2
+                        lhost_yml_dict['threshold_values'][self.keyName3] = new_value_for_keyname3
                     else:
-                        d={self.keyName1:a,self.keyName2:b,self.keyName3:c}
+                        d={self.keyName1:new_value_for_keyname1,self.keyName2:new_value_for_keyname2,self.keyName3:new_value_for_keyname3}
                         lhost_yml_dict.update(d)
                 else:
-                    p1={t:{self.keyName1:a,self.keyName2:b,self.keyName3:c}}               
+                    p1={t:{self.keyName1:new_value_for_keyname1,self.keyName2:new_value_for_keyname2,self.keyName3:new_value_for_keyname3}}               
                     lhost_yml_dict.update(p1)
 
 
