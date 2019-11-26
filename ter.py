@@ -65,9 +65,14 @@ class LhostYmlFileChangerForMultipleSites():
             self.wc.info()
             with open(teml_yml_fl) as scanner_conts:
                 lhost_yml_dict = yaml.load(scanner_conts)
+                t='threshold_values'
                 lhost_yml_dict['shinken_resources'] = lhost_yml_dict.get('shinken_resources', {})
                 lhost_yml_dict['shinken_resources'][self.keyName1] = self.encrypt(new_value_for_keyname1)
                 lhost_yml_dict['shinken_resources'][self.keyName2] = self.encrypt(site.upper() + new_value_for_keyname2)
+                p1={t:{WAITING_WARNING:3,WAITING_CRITICAL:1}}
+                lhost_yml_dict['threshold_values'].update(p1)
+
+
             self.process_config_file('/lhost.yml', yaml.safe_dump(lhost_yml_dict, default_flow_style=False))
             self.log_status()
             revision = self.wc.commit(msg='Updated lhost details of siteid:%s as part of %s on %s' % (site, 'FCO83000210' , datetime.now())) # FCO83000210 
