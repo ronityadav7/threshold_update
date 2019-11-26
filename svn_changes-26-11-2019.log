@@ -1,0 +1,10 @@
+2019-11-26T17:29:20.000774Z - 33288 - root - ERROR - while updating the ARJUN error occured:
+ ExecutionFailed: 1  svn co http://161.85.111.157/svn/ibc/sites/ARJUN --username="operator" --password="st3nt0r" --no-auth-cache --non-interactive "C:\tmp\tmp_m4nbwin\ARJUN"
+'svn' is not recognized as an internal or external command,
+operable program or batch file.
+
+2019-11-26T17:29:20.000824Z - 33288 - root - ERROR - while updating the arjun error occured:
+ ExecutionFailed: 1  svn co http://161.85.111.157/svn/ibc/sites/arjun --username="operator" --password="st3nt0r" --no-auth-cache --non-interactive "C:\tmp\tmpxu70_vqm\arjun"
+'svn' is not recognized as an internal or external command,
+operable program or batch file.
+

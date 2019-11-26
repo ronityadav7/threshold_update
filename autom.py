@@ -68,17 +68,20 @@ class LhostYmlFileChangerForMultipleSites():
                 lhost_yml_dict = yaml.load(scanner_conts)
                 t='threshold_values'
                 n='nem'
+                a=self.new_value_for_keyname1
+                b=self.new_value_for_keyname2
+                c=self.new_value_for_keyname3
                 if t in lhost_yml_dict:
                     lhost_yml_dict['threshold_values'] = lhost_yml_dict.get('threshold_values', {})
                     if self.keyName1 in lhost_yml_dict['threshold_values']:
-                        lhost_yml_dict['threshold_values'][self.keyName1] = self.new_value_for_keyname1
-                        lhost_yml_dict['threshold_values'][self.keyName2] = self.new_value_for_keyname2
-                        lhost_yml_dict['threshold_values'][self.keyName3] = self.new_value_for_keyname3
+                        lhost_yml_dict['threshold_values'][self.keyName1] = a
+                        lhost_yml_dict['threshold_values'][self.keyName2] = b
+                        lhost_yml_dict['threshold_values'][self.keyName3] = c
                     else:
-                        d={self.keyName1:self.new_value_for_keyname1,self.keyName2:self.new_value_for_keyname2,self.keyName3:self.new_value_for_keyname3}
+                        d={self.keyName1:a,self.keyName2:b,self.keyName3:c}
                         lhost_yml_dict.update(d)
                 else:
-                    p1={t:{self.keyName1:self.new_value_for_keyname1,self.keyName2:self.new_value_for_keyname2,self.keyName3:self.new_value_for_keyname3}}                
+                    p1={t:{self.keyName1:a,self.keyName2:b,self.keyName3:c}}               
                     lhost_yml_dict.update(p1)
 
 
@@ -166,9 +169,9 @@ if __name__ == "__main__":
         new_value_for_WAITING_THRESHOLD = 4 #updated value for the key in plain text
         new_value_for_WAITING_WARNING = 3 #updated value for the key in plain text
         new_value_for_WAITING_CRITICAL = 1
-        m.change_values_for_all_sites(sites_list_in_ALLCAPS, new_value_for_WAITING_THRESHOLD, new_value_for_WAITING_WARNING, new_value_for_WAITING_CRITICAL)
+        m.change_values_for_all_sites(sites_list_in_ALLCAPS, new_value_for_WAITING_WARNING, new_value_for_WAITING_CRITICAL, new_value_for_WAITING_THRESHOLD)
         sites_list_in_lowercase = map(lambda x: x.lower(), sites_list_in_ALLCAPS)
-        m.change_values_for_all_sites(sites_list_in_lowercase, new_value_for_WAITING_THRESHOLD, new_value_for_WAITING_WARNING, new_value_for_WAITING_CRITICAL)
+        m.change_values_for_all_sites(sites_list_in_lowercase, new_value_for_WAITING_WARNING, new_value_for_WAITING_CRITICAL, new_value_for_WAITING_THRESHOLD)
         if failed_sites == []:
             print ('All Sites Updated Successfully')
         else:
