@@ -69,7 +69,7 @@ class LhostYmlFileChangerForMultipleSites():
             with open(teml_yml_fl) as scanner_conts:
                 lhost_yml_dict = yaml.load(scanner_conts)
                 t='threshold_values'
-                n='nem'
+                n='dns_nameservers'
                 if n in lhost_yml_dict: 
                     if t in lhost_yml_dict:
                         lhost_yml_dict['threshold_values'] = lhost_yml_dict.get('threshold_values', {})
